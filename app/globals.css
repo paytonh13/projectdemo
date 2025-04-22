@@ -1,0 +1,142 @@
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+@layer base {
+  html {
+    font-size: 13px;
+  }
+
+  @media (min-width: 1600px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  h1 {
+    @apply text-5xl leading-[52px] lg:text-7xl lg:leading-[72px] font-bold text-gray-900;
+  }
+
+  h2 {
+    @apply text-xl leading-10 font-bold text-gray-900;
+  }
+
+  h3 {
+    @apply text-h3 leading-h3 font-bold text-gray-900;
+  }
+
+  h4 {
+    @apply text-h4 leading-h4 font-bold text-gray-900;
+  }
+
+  h5 {
+    @apply text-2xl font-bold text-neutral-800;
+  }
+
+  h6 {
+    @apply text-base leading-8 font-normal text-neutral-500;
+  }
+}
+
+@layer components {
+  .input-icon-left .input {
+    @apply pl-11;
+  }
+  .input-icon-right .input {
+    @apply pr-11;
+  }
+  .input-icon-left .input-lg {
+    @apply pl-12.5;
+  }
+  .input-icon-right .input-lg {
+    @apply pr-12.5;
+  }
+  .input-icon-left i:first-of-type,
+  .input-icon-left svg:first-of-type {
+    @apply left-4;
+  }
+  .input-icon-right i:last-of-type,
+  .input-icon-right svg:last-of-type {
+    @apply right-4;
+  }
+  .input-icon-left i,
+  .input-icon-left svg,
+  .input-icon-right i,
+  .input-icon-right svg {
+    @apply top-1/2 m-0 -translate-y-1/2 absolute;
+  }
+
+  .input-icon-left,
+  .input-icon-right {
+    @apply relative;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.button {
+  @apply flex items-center justify-center gap-2 rounded-2xl font-medium;
+}
+
+.button-primary {
+  @apply border border-primary-600 bg-primary-600 text-gray-900 hover:bg-primary-900 focus:bg-primary-600 focus:border-2 focus:border-primary-400;
+}
+
+.button-secondary {
+  @apply border border-neutral-500 bg-gray-50 text-neutral-500 hover:bg-neutral-500 hover:text-neutral-900;
+}
+
+.button-small {
+  @apply px-3 py-2 text-xs;
+}
+
+.button-medium {
+  @apply px-4 py-2.5 text-sm font-medium;
+}
+
+.button-large {
+  @apply px-6 py-3.5 text-base;
+}
+
+.react-multi-carousel-dot-list-custom {
+  position: relative !important;
+  margin: 48px 24px 0 !important;
+  gap: 40px;
+  width: 100%;
+}
+
+.react-compare-image-custom [data-testid="container"] {
+  height: 672px !important;
+}
+
+@media (max-width: 1024px) {
+  .react-compare-image-custom [data-testid="container"] {
+    height: 400px !important;
+  }
+}
+
+.bgWrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
